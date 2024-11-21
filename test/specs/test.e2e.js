@@ -20,7 +20,7 @@ describe('Login Tests', () => {
 
         for (const user of users) {
             // Attempt to login with invalid credentials
-            await LoginPage.login(user.username, 'secret_sauce');
+            await LoginPage.login(user.username, 'Raptor');
             // await LoginPage.logout();
 
             // Verify the displayed error message
@@ -28,7 +28,9 @@ describe('Login Tests', () => {
             // await expect(errorMessage).toContain(user.errorMessage);
 
             // Reload the login page for the next attempt
+            await browser.pause(1500);
             await LoginPage.open();
+            await browser.pause(1500);
         }
     });
 

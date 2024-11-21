@@ -20,17 +20,17 @@ class LoginPage extends Page {
         return $('input[id="login-button"]');
     }
 
-    // get errorMessage() {
-    //     return $('#error-message');  // Replace with actual selector for the error message
-    // }
+    get errorMessage() {
+        return $('#error-message');  // Replace with actual selector for the error message
+    }
 
-    // get burger() {
-    //     return $('#react-burger-menu-btn');
-    // }    
+    get burger() {
+        return $('#react-burger-menu-btn');
+     }    
     
-    // get logoutButton() {
-    //     return $('a[id="logout_sidebar_link"]');
-    // }
+    get logoutButton() {
+        return $('a[id="logout_sidebar_link"]');
+     }
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
@@ -41,19 +41,19 @@ class LoginPage extends Page {
         await this.btnSubmit.click();
     }
     
-    // async logout() {
-    //     await this.burger.waitForDisplayed();
-    //     await this.burger.click();
-    //     await this.logoutButton.waitForDisplayed();
-    //     await this.logoutButton.click();
-    //     await this.btnSubmit.waitForDisplayed();
-    //}
+     async logout() {
+       await this.burger.waitForDisplayed();
+        await this.burger.click();
+        await this.logoutButton.waitForDisplayed();
+        await this.logoutButton.click();
+        await this.btnSubmit.waitForDisplayed();
+    }
     
-    // async getUsernameError() {
-    //     // Wait for the error message to appear, if necessary
-    //     await this.errorMessage.waitForDisplayed();
-    //     return this.errorMessage.getText();
-    // }
+      async getUsernameError() {
+        //Wait for the error message to appear, if necessary
+         await this.errorMessage.waitForDisplayed();
+         return this.errorMessage.getText();
+     }
     /**
      * overwrite specific options to adapt it to page object
      */
